@@ -2,14 +2,18 @@ from flask import Flask, request, render_template
 # from sklearn.preprocessing import OneHotEncoder
 import pickle as pkl
 import numpy as np
+import os
 
 application = Flask(__name__)
 app = application
 
 # Load models (FIXED PATHS)
-model = pkl.load(open(r"D:/deployement/models/Model.pkl", 'rb'))
-scaler = pkl.load(open(r"D:/deployement/models/scaler.pkl", 'rb'))
-ohe = pkl.load(open(r"D:/deployement/models/ohe.pkl", 'rb'))
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = pkl.load(open(os.path.join(BASE_DIR, "models", "Model.pkl"), "rb"))
+scaler = pkl.load(open(os.path.join(BASE_DIR, "models", "scaler.pkl"), "rb"))
+ohe = pkl.load(open(os.path.join(BASE_DIR, "models", "ohe.pkl"), "rb"))
 
 
 @app.route('/')
