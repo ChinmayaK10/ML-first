@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from sklearn.preprocessing import OneHotEncoder
+# from sklearn.preprocessing import OneHotEncoder
 import pickle as pkl
 import numpy as np
 
@@ -7,9 +7,9 @@ application = Flask(__name__)
 app = application
 
 # Load models (FIXED PATHS)
-model = pkl.load(open(r"D:/PYthon\deployement/models/Model.pkl", 'rb'))
-scaler = pkl.load(open(r"D:/PYthon\deployement/models/scaler.pkl", 'rb'))
-ohe = pkl.load(open(r"D:/PYthon\deployement/models/ohe.pkl", 'rb'))
+model = pkl.load(open(r"D:/deployement/models/Model.pkl", 'rb'))
+scaler = pkl.load(open(r"D:/deployement/models/scaler.pkl", 'rb'))
+ohe = pkl.load(open(r"D:/deployement/models/ohe.pkl", 'rb'))
 
 
 @app.route('/')
