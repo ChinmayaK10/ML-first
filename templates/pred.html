@@ -19,6 +19,7 @@
         }
         input, select {
             width: 100%;
+            color: red;
             padding: 8px;
             margin-top: 8px;
         }
@@ -96,7 +97,8 @@
 </div>
 
 <!-- FIXED RESULT DISPLAY -->
-
+    {{if result ==NONE}}
+    
     <h2>Prediction: {{result}}</h2>
 
 
